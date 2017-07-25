@@ -1,2 +1,0 @@
-webpackJsonp([2],{285:function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=a(5),r=a.n(n);t.default=function(){return r.a.createElement("div",null,r.a.createElement("p",{className:"app__intro"},"To get started, edit ",r.a.createElement("code",null,"src/App.js")," and save to reload."))}}});
-//# sourceMappingURL=2.00302c9d.chunk.js.map
