@@ -22,8 +22,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "REACT_APP_TARGET=github npm run build",
+    "deploy": "gh-pages -d build -r https://github.com/zhipenglin/react_mobile_demo.git",
     "analyze": "source-map-explorer build/static/js/main.*",
     "precommit": "lint-staged",
     "start": "npm-run-all -p start-js watch-css",

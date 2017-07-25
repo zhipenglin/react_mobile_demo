@@ -3,7 +3,10 @@ import query from 'query-string';
 import firstOfAll from './firstOfAll';
 
 const newFetch = function(url, options) {
-  if (process.env.NODE_ENV === 'development') {
+  if (
+    process.env.NODE_ENV === 'development' ||
+    process.env.REACT_APP_TARGET === 'github'
+  ) {
     let urlArgs = url.split('?');
     url = `${process.env.PUBLIC_URL}/mock_data${urlArgs[0]}.json${urlArgs[1]
       ? '?' + urlArgs[1]
