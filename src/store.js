@@ -1,27 +1,27 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
-import createHashHistory from 'history/createHashHistory';
 import rootReducer from './reducers/rootReducer';
 
-const loggerMiddleware = createLogger();
+export const history = (function() {
+  if (process.env.REACT_APP_TARGET === 'github') {
+    return require('history/createHashHistory')['default']();
+  } else {
+    return require('history/createBrowserHistory')['default']();
+  }
+})();
 
-export const history =
-  process.env.REACT_APP_TARGET === 'github'
-    ? createHashHistory()
-    : createHistory();
+const middlewares = [];
+if (process.env.NODE_ENV === `development`) {
+  const { logger } = require(`redux-logger`);
+  middlewares.push(logger);
+}
 
 function configureStore(preloadedState) {
   return createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(
-      thunkMiddleware,
-      loggerMiddleware,
-      routerMiddleware(history)
-    )
+    applyMiddleware(thunkMiddleware, ...middlewares, routerMiddleware(history))
   );
 }
 
