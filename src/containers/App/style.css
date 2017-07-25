@@ -1,0 +1,36 @@
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app__logo {
+  animation: logo-spin infinite 20s linear;
+  height: 2.133333rem;
+}
+
+.app__header {
+  text-align: center;
+  background-color: #222;
+  height: 4rem;
+  padding: 0.533333rem;
+  color: white;
+}
+
+.app__header a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.266667rem;
+}
+
+.app__header a.active {
+  font-size: 1.2em;
+}
+
+.app__intro {
+  font-size: large;
+}
