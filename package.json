@@ -26,6 +26,7 @@
     "deploy": "gh-pages -d build -r https://github.com/zhipenglin/react_mobile_demo.git",
     "analyze": "source-map-explorer build/static/js/main.*",
     "precommit": "lint-staged",
+    "prepush":"npm run predeploy",
     "start": "npm-run-all -p start-js watch-css",
     "build": "npm run build-css&&react-scripts build",
     "start-js": "react-scripts start",

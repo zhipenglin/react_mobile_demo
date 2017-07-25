@@ -1,8 +1,8 @@
-const $body = document.body;
+//const $body = document.body;
 
 export default function(title) {
   document.title = title;
-  if (/MicroMessenger/i.test(window.navigator.userAgent)) {
+  /*if (/MicroMessenger/i.test(window.navigator.userAgent)) {
     // hack在微信等webview中无法修改document.title的情况
     const $iframe = document.createElement('iframe');
     $iframe.src = '/favicon.ico';
@@ -15,5 +15,5 @@ export default function(title) {
     }
     $body.appendChild($iframe);
     $iframe.addEventListener('load', eventHandler);
-  }
+  }*/
 }

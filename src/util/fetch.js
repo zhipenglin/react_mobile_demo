@@ -1,6 +1,7 @@
-import fetch from 'isomorphic-fetch';
 import query from 'query-string';
 import firstOfAll from './firstOfAll';
+
+const fetch = window.fetch;
 
 const newFetch = function(url, options) {
   if (
